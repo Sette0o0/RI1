@@ -113,18 +113,18 @@ let personagens = [
     personagem8
 ];
 
-personagens.forEach(function(personagem) {
+for (let i = 0; i < personagens.length; i++) {
+    let personagem = personagens[i];
     let total = personagem.forca + personagem.resistencia + personagem.velocidade;
-    personagens.forEach(function(p) {
-        if (p !== personagem) {
-            let comparacao = p.forca + p.resistencia + p.velocidade;
-            if (total > comparacao) {
-                console.log(`${personagem.nome} vence ${p.nome}`);
-            } else if (total < comparacao) {
-                console.log(`${personagem.nome} perde ${p.nome}`);
-            } else {
-                console.log(`${personagem.nome} e ${p.nome} são igualmente fortes`);
-            }
+    for (let j = i + 1; j < personagens.length; j++) {
+        let p = personagens[j];
+        let comparacao = p.forca + p.resistencia + p.velocidade;
+        if (total > comparacao) {
+            console.log(`${personagem.nome} vence ${p.nome}`);
+        } else if (total < comparacao) {
+            console.log(`${personagem.nome} perde ${p.nome}`);
+        } else {
+            console.log(`${personagem.nome} e ${p.nome} são igualmente fortes`);
         }
-    })
-})
+    }
+}
